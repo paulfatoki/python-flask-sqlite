@@ -1,7 +1,3 @@
-# Author: Clinton Daniel, University of South Florida
-# Date: 4/4/2023
-# Description: This is a Flask App that uses SQLite3 to
-# execute (C)reate, (R)ead, (U)pdate, (D)elete operations
 
 from flask import Flask
 from flask import render_template
@@ -37,7 +33,7 @@ def addrec():
                 cur.execute("INSERT INTO students (name, addr, city, zip) VALUES (?,?,?,?)",(nm, addr, city, zip))
 
                 con.commit()
-                msg = "Record successfully added to database"
+                msg = "Record successfully added to database, thanks"
         except:
             con.rollback()
             msg = "Error in the INSERT"
