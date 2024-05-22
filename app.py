@@ -136,3 +136,7 @@ def delete():
             con.close()
             # Send the transaction message to result.html
             return render_template('result.html',msg=msg)
+        
+if __name__ == '__main__':
+      
+         app.run(debug = True,port=5006)
