@@ -1,4 +1,4 @@
-Description: This python script assumes that you already have
+#Description: This python script assumes that you already have
 # a database.db file at the root of your workspace.
 # This python script will CREATE a table called students 
 # in the database.db using SQLite3 which will be used
@@ -13,6 +13,13 @@ conn = sqlite3.connect('database.db')
 print("Connected to database successfully")
 
 conn.execute('CREATE TABLE students (name TEXT, addr TEXT, city TEXT, zip TEXT)')
+
+conn.execute("INSERT INTO students(name, addr,city,zip) VALUES (?, ?,?,?)",
+            ('Gold Truck  for the lord', 'Truck wills',67)
+            )
+conn.execute("INSERT INTO books(title, author,quantity) VALUES (?, ?,?)",
+            ('Civil war', 'The Nigeria Civil war was fight with no victor no vanaquished',89)
+            )
 print("Created table successfully!")
 
 conn.close()
