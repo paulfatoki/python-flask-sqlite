@@ -11,7 +11,7 @@ import sqlite3
 
 
 conn = sqlite3.connect('database.db')
-print("Connected to database successfully")
+print("database connectd ...")
 
 conn.execute('DROP TABLE IF EXISTS students')
 
